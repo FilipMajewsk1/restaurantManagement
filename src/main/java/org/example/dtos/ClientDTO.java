@@ -15,6 +15,7 @@ public class ClientDTO {
     private String name;
     private String surname;
     private String email;
+    private String phoneNum;
 
     public static ClientDTO mapToDto(Client client) {
         if (client == null) return null;
@@ -24,6 +25,7 @@ public class ClientDTO {
         dto.name = client.getName();
         dto.surname = client.getSurname();
         dto.email = client.getEmail();
+        dto.phoneNum = client.getPhoneNum();
 
         return dto;
     }
