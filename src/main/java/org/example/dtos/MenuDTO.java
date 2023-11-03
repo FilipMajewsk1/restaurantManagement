@@ -3,9 +3,6 @@ import lombok.*;
 import org.example.models.Menu;
 import org.example.models.MenuSections;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @Getter
 @Setter
