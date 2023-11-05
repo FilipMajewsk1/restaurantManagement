@@ -16,7 +16,6 @@ import java.util.Objects;
 @Builder
 @jakarta.persistence.Table(name = "Tables")
 @NotNull(message = "The table must not be null.")
-
 public class Table {
 
     @Id

@@ -31,12 +31,12 @@ public class Order {
     private int id;
 
     @NotNull(message = "The table must not be null.")
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "table_id", referencedColumnName = "table_id")
     private org.example.models.Table table;
 
     @NotNull(message = "The reservation must not be null.")
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "reservation_id", referencedColumnName = "reservation_id")
     private Reservation reservation;
 

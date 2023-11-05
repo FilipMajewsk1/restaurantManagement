@@ -29,19 +29,19 @@ public class Reservation {
 
     @NotNull(message = "Date must not be null.")
     @Size(min = 2, max = 50, message = "Date must be between 2 and 50 characters.")
-    private String date;
+    private String ddate;
 
     @NotNull(message = "Hour must not be null.")
     @Size(min = 1, max = 10, message = "Hour must be between 1 and 10 characters.")
-    private String hour;
+    private String hhour;
 
     @NotNull(message = "The client must not be null.")
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "client_id", referencedColumnName = "client_id")
     private Client client;
 
     @NotNull(message = "The table must not be null.")
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "table_id", referencedColumnName = "table_id")
     private org.example.models.Table table;
 

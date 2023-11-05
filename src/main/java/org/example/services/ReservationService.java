@@ -72,8 +72,8 @@ public class ReservationService {
     public Reservation mapFromDto(ReservationDTO dto) {
         return dto != null ? new Reservation(
                 -1,
-                dto.getDate(),
-                dto.getHour(),
+                dto.getDdate(),
+                dto.getHhour(),
                 clientService.getClient(dto.getClient_id()),
                 tableService.getTable(dto.getTable_id()),
                 dto.getGuestNumber(),
