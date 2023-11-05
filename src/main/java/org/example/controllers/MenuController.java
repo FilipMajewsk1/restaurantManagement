@@ -16,12 +16,12 @@ public class MenuController {
     @Autowired
     public MenuController(MenuService service) { this.service = service; }
 
-    @PostMapping("/tables")
+    @PostMapping("/menu")
     public MenuDTO create(@RequestBody MenuDTO menuDto) {
         return MenuDTO.mapToDto(service.createPosition(service.mapFromDto(menuDto)));
     }
 
-    @GetMapping("/tables")
+    @GetMapping("/menu")
     public List<MenuDTO> getAll() {
         List<MenuDTO> menu = new ArrayList<>();
 
@@ -30,15 +30,15 @@ public class MenuController {
         return menu;
     }
 
-    @GetMapping("/tables/{id}")
+    @GetMapping("/menu/{id}")
     public MenuDTO get(@PathVariable int id) { return MenuDTO.mapToDto(service.getPosition(id)); }
 
-    @PatchMapping("/tables/{id}")
+    @PatchMapping("/menu/{id}")
     public MenuDTO update(@PathVariable int id, @RequestBody MenuDTO menuDto) {
         return MenuDTO.mapToDto(service.updatePosition(id, service.mapFromDto(menuDto)));
     }
 
-    @DeleteMapping("/tables/{id}")
+    @DeleteMapping("/menu/{id}")
     public void delete(@PathVariable int id) { service.deletePosition(id); }
 
 }

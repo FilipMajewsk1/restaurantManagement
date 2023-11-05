@@ -17,12 +17,12 @@ public class ClientController {
         this.service = service;
     }
 
-    @PostMapping("/reservations")
+    @PostMapping("/clients")
     public ClientDTO create(@RequestBody ClientDTO clientDto) {
         return ClientDTO.mapToDto(service.createClient(service.mapFromDto(clientDto)));
     }
 
-    @GetMapping("/reservations")
+    @GetMapping("/clients")
     public List<ClientDTO> getAll() {
         List<ClientDTO> clients = new ArrayList<>();
 
@@ -31,17 +31,17 @@ public class ClientController {
         return clients;
     }
 
-    @GetMapping("/reservations/{id}")
+    @GetMapping("/clients/{id}")
     public ClientDTO get(@PathVariable int id) {
         return ClientDTO.mapToDto(service.getClient(id));
     }
 
-    @PatchMapping("/reservations/{id}")
+    @PatchMapping("/clients/{id}")
     public ClientDTO update(@PathVariable int id, @RequestBody ClientDTO clientDto) {
         return ClientDTO.mapToDto(service.updateClient(id, service.mapFromDto(clientDto)));
     }
 
-    @DeleteMapping("/reservations/{id}")
+    @DeleteMapping("/clients/{id}")
     public void delete(@PathVariable int id) {
         service.deleteClient(id);
     }
