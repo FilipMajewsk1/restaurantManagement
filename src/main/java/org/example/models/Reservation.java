@@ -36,7 +36,7 @@ public class Reservation {
     private String hhour;
 
     @NotNull(message = "The client must not be null.")
-    @OneToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "client_id", referencedColumnName = "client_id")
     private Client client;
 
