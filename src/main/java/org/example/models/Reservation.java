@@ -27,6 +27,10 @@ public class Reservation {
     @Column(name="reservation_id")
     private int id;
 
+    @NotNull(message = "Name must not be null.")
+    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters.")
+    private String name;
+
     @NotNull(message = "Date must not be null.")
     @Size(min = 2, max = 50, message = "Date must be between 2 and 50 characters.")
     private String ddate;

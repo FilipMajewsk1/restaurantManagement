@@ -11,6 +11,7 @@ import org.example.models.Reservation;
 public class ReservationDTO {
 
     private int id;
+    String name;
     private String ddate;
     private String hhour;
     private int client_id;
@@ -23,6 +24,7 @@ public class ReservationDTO {
 
         ReservationDTO dto = new ReservationDTO();
         dto.id = reservation.getId();
+        dto.name = reservation.getName();
         dto.ddate = reservation.getDdate();
         dto.hhour = reservation.getHhour();
         dto.client_id = reservation.getClient().getId();

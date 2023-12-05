@@ -30,6 +30,10 @@ public class Order {
     @Column(name="order_id")
     private int id;
 
+    @NotNull(message = "Name must not be null.")
+    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters.")
+    private String name;
+
     @NotNull(message = "The table must not be null.")
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "table_id", referencedColumnName = "table_id")

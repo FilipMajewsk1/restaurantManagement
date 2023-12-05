@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderDTO {
     private int id;
+    private String name;
     private int table_id;
     private int reservation_id;
     private List<OrderLineDTO> lines = new ArrayList<>();
@@ -24,6 +25,7 @@ public class OrderDTO {
 
         OrderDTO dto = new OrderDTO();
         dto.id = order.getId();
+        dto.name = order.getName();
         dto.reservation_id = order.getTable().getId();
         dto.table_id = order.getTable().getId();
 
