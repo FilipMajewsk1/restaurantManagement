@@ -7,8 +7,8 @@ public enum MenuSections {
     Appetizer,
     @JsonProperty("Soup")
     Soup,
-    @JsonProperty("MainCoarse")
-    MainCoarse,
+    @JsonProperty("MainCourse")
+    MainCourse,
     @JsonProperty("Dessert")
     Dessert
 }

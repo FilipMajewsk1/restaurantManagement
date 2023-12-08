@@ -76,6 +76,7 @@ public class OrderService {
 
         Order order = new Order(
                 -1,
+                dto.getName(),
                 tableService.getTable(dto.getTable_id()),
                 reservationService.getReservation(dto.getReservation_id()),
                 new ArrayList<>()
