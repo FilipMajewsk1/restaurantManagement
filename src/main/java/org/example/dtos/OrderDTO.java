@@ -26,7 +26,7 @@ public class OrderDTO {
         OrderDTO dto = new OrderDTO();
         dto.id = order.getId();
         dto.name = order.getName();
-        dto.reservation_id = order.getTable().getId();
+        dto.reservation_id = order.getReservation().getId();
         dto.table_id = order.getTable().getId();
 
         for (OrderLine line : order.getLines()) {
